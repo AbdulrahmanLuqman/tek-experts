@@ -1,0 +1,141 @@
+; (
+    function () {
+
+        // SKU-27
+
+        const sku27Carousel = document.querySelector(".sku-27__carousel");
+
+        if (!!sku27Carousel) {
+            let options = {
+                wrapAround: true,
+                resize: true,
+                adaptiveHeight: false,
+                prevNextButtons: true,
+                pageDots: true,
+                autoPlay: false,
+                imagesLoaded: true
+            }
+
+                if (window.innerWidth < 992 ) {
+                    options.adaptiveHeight = true
+                } else {
+                    console.log('more')
+                    options.adaptiveHeight = false
+                }
+
+            const sku27Slide = new Flickity(sku27Carousel, options);
+            window.addEventListener('load', function () {
+              sku27Slide.resize()
+            })
+        }
+
+        // SKU-b4
+
+        const b4Carousel = document.querySelector(".b4-container__carousel");
+
+        if (b4Carousel) {
+            let options = {
+                wrapAround: true,
+                resize: true,
+                adaptiveHeight: false,
+                prevNextButtons: true,
+                pageDots: false,
+                autoPlay: false,
+                imagesLoaded: true
+            }
+
+            const b4Slide = new Flickity(b4Carousel, options);
+            window.addEventListener('load', function () {
+              b4Slide.resize()
+            })
+        }
+
+        // SKU-b3
+
+        const b3Carousel = document.querySelector(".b3-container__carousel");
+
+        if (b3Carousel) {
+            let options = {
+                wrapAround: true,
+                resize: true,
+                adaptiveHeight: false,
+                prevNextButtons: true,
+                pageDots: false,
+                autoPlay: false,
+                imagesLoaded: true
+            }
+
+            const b3Slide = new Flickity(b3Carousel, options);
+            window.addEventListener('load', function () {
+              b3Slide.resize()
+            })
+        }
+
+        // SKU-b5
+
+        const b5Carousel = document.querySelector(".b5-container__carousel");
+
+        if (b5Carousel) {
+            let options = {
+                wrapAround: true,
+                resize: true,
+                adaptiveHeight: false,
+                prevNextButtons: true,
+                pageDots: false,
+                autoPlay: false,
+                imagesLoaded: true
+            }
+
+            const b5Slide = new Flickity(b5Carousel, options);
+            window.addEventListener('load', function () {
+              b5Slide.resize()
+            })
+        }
+
+        // SKU-f7
+
+        let f7Carousel = document.querySelector("#sku-f7");
+
+        if (f7Carousel) {
+            let options = {
+                wrapAround: true,
+                autoPlay: false,
+                resize: false,
+                prevNextButtons: false,
+                pageDots: false
+            }
+
+            const f7Slide = new Flickity(f7Carousel, options);
+            window.addEventListener('load', function () {
+                f7Slide.resize()
+            })
+        }
+
+
+        let f7navCarousel = document.querySelector("#sku-f7-nav");
+        console.log(f7navCarousel)
+
+        if (f7navCarousel) {
+            let options = {
+                asNavFor: f7Carousel,
+                contain: true,
+                pageDots: false,
+                prevNextButtons: false,
+                setGallerySize: false,
+                autoplay: false,
+                draggable: false,
+
+            }
+
+            const f7navSlide = new Flickity(f7navCarousel, options);
+            window.addEventListener('load', function () {
+                f7navSlide.resize()
+            })
+            console.log(f7navSlide)
+        }
+
+        return
+    }
+
+
+)();

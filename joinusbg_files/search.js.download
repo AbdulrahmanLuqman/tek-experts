@@ -1,0 +1,32 @@
+window.addEventListener("DOMContentLoaded", function () {
+  const search = document.querySelector(".search-home > light-search .home-search");
+  const heroBrick = document.querySelector(".search-home .defaults");
+
+  if (heroBrick && search && window.innerWidth > 991) {
+    const heroBrickSearch = heroBrick.querySelector("light-search");
+    window.addEventListener("scroll", function () {
+      const scroll = window.pageYOffset;
+      heroBrickPosition = heroBrick.offsetTop;
+      heroBrickHeight = heroBrick.offsetHeight;
+      if (scroll > heroBrickPosition + heroBrickHeight) {
+        search.classList.add("sticky");
+        if (!!heroBrickSearch) {
+          heroBrickSearch.classList.add("hidden");
+        }
+      } else {
+        search.classList.remove("sticky");
+        if (!!heroBrickSearch) {
+          heroBrickSearch.classList.remove("hidden");
+        }
+      }
+    });
+  } else if (search && window.innerWidth > 991) {
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset > 1) {
+        search.classList.add("sticky");
+      } else {
+        search.classList.remove("sticky");
+      }
+    });
+  }
+});
